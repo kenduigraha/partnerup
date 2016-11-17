@@ -20,8 +20,13 @@ let newUser = (req, res, next) => {
             token: jwt.sign({
               sub: user._id,
               username: user.username,
-              email: user.email
-            }, 'secret', { expiresIn: '1h' })
+              email: user.email,
+              photo: user.photo,
+              location: {
+                lat: user.location.lat,
+                lng: user.location.lng
+              }
+            }, process.env.SECRET_KEY, { expiresIn: '1h' })
           })
         }
       })(req, res, next)
@@ -38,8 +43,13 @@ let loginUser = (req, res, next) => {
         token: jwt.sign({
           sub: user._id,
           username: user.username,
-          email: user.email
-        }, 'secret', { expiresIn: '1h' })
+          email: user.email,
+          photo: user.photo,
+          location: {
+            lat: user.location.lat,
+            lng: user.location.lng
+          }
+        }, process.env.SECRET_KEY, { expiresIn: '1h' })
       })
     }
   })(req, res, next)

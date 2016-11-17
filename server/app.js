@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 
 app.use('/api/users', routesUsers);
-app.use('/api/description', routesDesc);
+app.use('/api/descriptions', routesDesc);
 
 passport.use(new LocalStrategy(User.authenticate()))
 

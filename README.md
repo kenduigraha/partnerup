@@ -32,6 +32,7 @@ npm run dev
 14. jwt-decode
 15. jQuery
 16. bootstrap
+17. gmaps.js
 
 ## Database
 1. name : db_partnerup

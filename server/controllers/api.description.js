@@ -5,8 +5,15 @@ const seeder = require('../seeder/api.description.json')
 
 let newDescription = (req, res) => {
   Data.create({
-    letter: req.body.letter,
-    frequency: req.body.frequency
+    title: req.body.title,
+    content: req.body.content,
+    looking_for: req.body.looking_for,
+    username: req.body.username,
+    photos: req.body.photos,
+    location: {
+      lat : req.body.location.lat,
+      lng : req.body.location.lng
+    }
   }, (err, new_data) => {
     if(err){
       res.status(400).json(err)
