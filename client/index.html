@@ -116,7 +116,7 @@
                     <input type="text" name="username" id="username" class="form-control" placeholder="your username">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="key" id="pasword" class="form-control" placeholder="your password">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="your password">
                 </div>
                 <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
             </form>
@@ -139,18 +139,18 @@
             <h4 class="modal-title">Register</h4>
           </div>
           <div class="modal-body">
-            <form role="form" id="register-form" autocomplete="off">
+            <form role="form" id="register-form" autocomplete="off" enctype="multipart/form-data" method="post" action="http://localhost:3000/api/users">
                 <div class="form-group">
-                    <input type="text" name="email" id="username" class="form-control" placeholder="Input username">
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Input username">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="key" id="password" class="form-control" placeholder="Input password">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Input password">
                 </div>
                 <div class="form-group">
                     <input type="email" name="email" id="email" class="form-control" placeholder="Input email">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="photo" id="photo" class="form-control" placeholder="Input photo">
+                    <input type="file" name="photo" id="photo" class="form-control">
                 </div>
                 <input type="submit" id="btn-register" class="btn btn-custom btn-lg btn-block" value="Register">
             </form>
@@ -166,5 +166,6 @@
   <script src="./lib/jquery/dist/jquery.min.js"></script>
   <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="./lib/jwt-decode/build/jwt-decode.min.js"></script>
-  <script src="./script/script.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  <script src="./script/index.js"></script>
 </html>
