@@ -57,10 +57,15 @@
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-sign-in" aria-hidden="true"></i> <span class="network-name">Login</span></a>
+                                <a href="#" class="btn btn-default btn-lg" id="login" data-toggle="modal" data-target="#modal_login">
+                                  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                  <span class="network-name">Login</span>
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-handshake-o" aria-hidden="true"></i> <span class="network-name">Register</span></a>
+                                <a href="#" class="btn btn-default btn-lg" id="register" data-toggle="modal" data-target="#modal_register">
+                                  <i class="fa fa-handshake-o" aria-hidden="true"></i> <span class="network-name">Register</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -95,9 +100,71 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Login -->
+    <div id="modal_login" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Login</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" id="login-form" autocomplete="off">
+                <div class="form-group">
+                    <input type="text" name="username" id="username" class="form-control" placeholder="your username">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="key" id="pasword" class="form-control" placeholder="your password">
+                </div>
+                <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Login -->
+
+    <!-- Modal Register -->
+    <div id="modal_register" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Register</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" id="register-form" autocomplete="off">
+                <div class="form-group">
+                    <input type="text" name="email" id="username" class="form-control" placeholder="Input username">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="key" id="password" class="form-control" placeholder="Input password">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Input email">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="photo" id="photo" class="form-control" placeholder="Input photo">
+                </div>
+                <input type="submit" id="btn-register" class="btn btn-custom btn-lg btn-block" value="Register">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Register -->
 </body>
   <script src="./lib/jquery/dist/jquery.min.js"></script>
   <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="./lib/jwt-decode/build/jwt-decode.min.js"></script>
-  <script src="./script/script.js"></scriptsrc>
+  <script src="./script/script.js"></script>
 </html>
