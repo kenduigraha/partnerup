@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>welcome, partnerup</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="icon" href="http://www.clipartkid.com/images/124/handshake-icon-icon-search-engine-twHOOr-clipart.png" type="image/x-icon" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">partnerup</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" id="logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <img src="" class="img-circle" id="img_profile" width="350" height="300">
+                        <h1 id="welcome"></h1>
+                        <hr class="intro-divider">
+                        <h3>Let other know about you</h3>
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="#" class="btn btn-default btn-lg" data-toggle="modal" data-target="#modal_description">
+                                  <span class="network-name">Describe Me</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <div class="content-section-b" id="content"></div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; partnerup 2016. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Description -->
+    <div id="modal_description" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Describe me</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" id="description-form" autocomplete="off">
+                <div class="form-group">
+                  <label for="title">I'm here to</label>
+                    <select type="text" name="title" id="title" class="form-control">
+                      <option value="I Wants to join startup as a Co-Founder">Join startup as a Co-Founder</option>
+                      <option value="I have an idea and I'm looking for a Co-Founder">Have an idea and I'm looking for a Co-Founder</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="content">Describe about me</label>
+                    <textarea name="content" id="content" class="form-control" stye="resize:none;" placeholder="Description"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="looking_for">I'm here looking for</label>
+                    <select name="looking_for" id="looking_for" class="form-control">
+                      <option value="CEO">CEO</option>
+                      <option value="CTO">CTO</option>
+                      <option value="Sales/Marketing">Sales/Marketing</option>
+                      <option value="Full Stack Developer">Full Stack Developer</option>
+                      <option value="Coder">Coder</option>
+                      <option value="Designer">Designer</option>
+                    </select>
+                </div>
+                <input type="submit" id="btn-add" class="btn btn-custom btn-lg btn-block" value="Register" data-dismiss="modal">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Description -->
+</body>
+  <script src="./lib/jquery/dist/jquery.min.js"></script>
+  <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./lib/jwt-decode/build/jwt-decode.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  <script src="./script/home.js"></script>
+</html>

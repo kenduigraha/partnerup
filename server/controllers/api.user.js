@@ -67,18 +67,18 @@ let loginUser = (req, res, next) => {
       return res.status(400).json(err)
     }else{
       console.log(user);
-      // return res.status(200).json({
-      //   token: jwt.sign({
-      //     sub: user._id,
-      //     username: user.username,
-      //     email: user.email,
-      //     photo: user.photo,
-      //     location: {
-      //       lat: user.location.lat,
-      //       lng: user.location.lng
-      //     }
-      //   }, "secret", { expiresIn: '1h' })
-      // })
+      return res.status(200).json({
+        token: jwt.sign({
+          sub: user._id,
+          username: user.username,
+          email: user.email,
+          photo: user.photo
+          // location: {
+          //   lat: user.location.lat,
+          //   lng: user.location.lng
+          // }
+        }, "secret", { expiresIn: '1h' })
+      })
     }
   })(req, res, next)
 }
