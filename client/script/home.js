@@ -84,7 +84,7 @@ function processEdit(id){
                       <form role="form" id="edit-form" autocomplete="off">
                           <div class="form-group">
                             <label for="title">I'm here to</label>
-                              <select type="text" name="title" id="title" class="form-control">
+                              <select type="text" name="title" id="title" class="form-control" value="${new_data.title}">
                                 <option value="I Wants to join startup as a Co-Founder">Join startup as a Co-Founder</option>
                                 <option value="I have an idea and I'm looking for a Co-Founder">Have an idea and I'm looking for a Co-Founder</option>
                               </select>
@@ -95,7 +95,7 @@ function processEdit(id){
                           </div>
                           <div class="form-group">
                             <label for="looking_for">I'm here looking for</label>
-                              <select name="looking_for" id="looking_for" class="form-control"">
+                              <select name="looking_for" id="looking_for" class="form-control" value="${new_data.looking_for}">
                                 <option value="CEO">CEO</option>
                                 <option value="CTO">CTO</option>
                                 <option value="Sales/Marketing">Sales/Marketing</option>
@@ -142,6 +142,7 @@ function processEdit(id){
       `
       $(`#${new_data._id}`).replaceWith(data_HTML)
       $('.modal-backdrop.fade.in').remove()
+      $("body").removeClass("modal-open")
     }
   })
 
@@ -153,8 +154,9 @@ function processDelete(id){
     method: "DELETE",
     success: function(deleted_data){
       $(`#${deleted_data._id}`).remove()
-      $('.modal-backdrop.fade.in').hide()
-
+      $('.modal-backdrop.fade.in').remove()
+      // $('#modal_delete').remove()
+      $("body").removeClass("modal-open")
     }
   })
 }
