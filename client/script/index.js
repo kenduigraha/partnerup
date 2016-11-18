@@ -20,6 +20,8 @@ $(document).ready(function(){
     processLogin()
   })
 
+  showAllData()
+
   //register
   $('#btn-register').on('click', function(e){
     processRegister()
@@ -80,6 +82,40 @@ function processLogin(){
         localStorage.removeItem('token')
         window.location = 'index.html'
       }
+    }
+  })
+}
+
+function showAllData(){
+  $.ajax({
+    url: 'http://localhost:3000/api/descriptions',
+    success : function(all_data){
+      console.log(all_data);
+      var data_HTML = ''
+      for (var i = 0; i < all_data.length; i++) {
+        data_HTML += `
+        <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">${all_data[i].title}</h2>
+                    <p class="lead">${all_data[i].content}</p>
+                    <p class="lead">I'm looking for : ${all_data[i].looking_for}</p>
+                    <p class="lead">Username: ${all_data[i].username}</p>
+
+                </div>
+                <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+                    <img class="img-responsive" src="http://localhost:3000/photos/${all_data[i].photos}">
+                </div>
+            </div>
+        </div>
+        </div>
+        `
+      }
+
+      $('#content').append(data_HTML)
     }
   })
 }
