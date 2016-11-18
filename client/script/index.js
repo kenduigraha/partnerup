@@ -80,7 +80,7 @@ function processLogin(){
       }else{
         alert('input is wrong')
         localStorage.removeItem('token')
-        window.location = 'index.html'
+        // window.location = 'index.html'
       }
     }
   })

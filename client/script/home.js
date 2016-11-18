@@ -161,6 +161,15 @@ function processDelete(id){
   })
 }
 
+function authButtonEditDelete(data){
+  return (data.username === Auth.getUser().username) ? `<button type="button" class="btn btn-default btn-sm pull-right"  data-toggle="modal" data-target="#modal_delete">
+    <span class="glyphicon glyphicon-remove"></span> Remove
+  </button>
+  <button type="button" class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target="#modal_edit">
+    <span class="glyphicon glyphicon-pencil"></span> Edit
+  </button>` : ''
+}
+
 function showAllData(){
   $.ajax({
     url: 'http://localhost:3000/api/descriptions',
@@ -176,13 +185,7 @@ function showAllData(){
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
-                    <button type="button" class="btn btn-default btn-sm pull-right"  data-toggle="modal" data-target="#modal_delete">
-                      <span class="glyphicon glyphicon-remove"></span> Remove
-                    </button>
-                    <button type="button" class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target="#modal_edit">
-                      <span class="glyphicon glyphicon-pencil"></span> Edit
-                    </button>
-
+                    ${authButtonEditDelete(all_data[i])}
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">${all_data[i].title}</h2>
