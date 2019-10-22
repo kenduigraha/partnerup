@@ -23,7 +23,6 @@ let newUser = (req, res, next) => {
         return res.json('Error uploading file!', err)
       }
       else if (req.file.filename) {
-          // res.end(`${req.file.filename}`)
         User.register({
           username: req.body.username,
           email: req.body.email,
