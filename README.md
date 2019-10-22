@@ -1,4 +1,4 @@
-# partnerup
+# partnerup portofolio
 
 ## How to Run App
 1. client
