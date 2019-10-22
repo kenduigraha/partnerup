@@ -10,6 +10,6 @@ router.post('/', controller.newUser);
 router.post('/login', controller.loginUser);
 
 // //photo upload
-// router.get('/', controller.photoUser)
+router.get('/', controller.photoUser)
 
 module.exports = router;
