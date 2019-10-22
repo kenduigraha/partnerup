@@ -71,11 +71,7 @@ let loginUser = (req, res, next) => {
           sub: user._id,
           username: user.username,
           email: user.email,
-          photo: user.photo
-          // location: {
-          //   lat: user.location.lat,
-          //   lng: user.location.lng
-          // }
+          photo: user.photo,
         }, "secret", { expiresIn: '1h' })
       })
     }
